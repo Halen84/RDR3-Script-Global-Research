@@ -13,7 +13,7 @@ private:
 ```
 
 # Snippets from the scripts (b1436)
-- TODO
+- short_update.ysc
 - Line 963 - func_25
 ```
 if (bVar1 && !Global_1935689.f_1)

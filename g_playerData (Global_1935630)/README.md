@@ -4,19 +4,26 @@
 struct g_playerData
 {
 	BOOL bPlayerDead = *getGlobalPtr(BASE + 12);
-	Hash _currentWeapon = *getGlobalPtr(BASE + 44); // test
-	Hash _lastWeaponFired = *getGlobalPtr(BASE + 46); // test
+	BOOL _inRespawnSequence = *getGlobalPtr(BASE + 4); // Guessed name - True until player moves after respawning
+	Hash _currentWeapon = *getGlobalPtr(BASE + 44); // Guessed name
+	Hash _lastWeaponFired = *getGlobalPtr(BASE + 46); // Guessed name
 
-	void _SET_PLAYER_FLAG(int flag) // not actually in g_playerData
+	// Taken from the scripts - not actually in g_playerData
+	// See enum _ePlayerFlags
+	void setPlayerFlag(int flag)
 	{
-		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) | flag); // Taken from the scripts
+		flag /= 2; // Not in scripts, modified by me. TODO: Fix this in the enums instead
+		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) | flag);
 	}
 
-	void _CLEAR_PLAYER_FLAG(int flag) // not actually in g_playerData
+	// Taken from the scripts - not actually in g_playerData
+	// See enum _ePlayerFlags
+	void clearPlayerFlag(int flag)
 	{
-		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) - (*getGlobalPtr(BASE) & flag)); // Taken from the scripts
+		flag /= 2; // Not in scripts, modified by me. TODO: Fix this in the enums instead
+		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) - (*getGlobalPtr(BASE) & flag));
 	}
-	
+
 private:
 	static const int BASE = 1935630;
 };
@@ -59,7 +66,7 @@ enum _ePlayerFlags
 ```
 
 # Snippets from the scripts (b1436)
-- TODO
+- short_update.ysc
 - Line 129013 - func_4340
 ```
 case 1:

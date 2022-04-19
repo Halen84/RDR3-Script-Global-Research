@@ -4,10 +4,10 @@
 struct g_FishingDataUnsaved
 {
 	BOOL bAllowEquipRod = *getGlobalPtr(BASE + 17);
-	BOOL _bDisableFishingRodInwheel = *getGlobalPtr(BASE + 18); // ???
+	BOOL bDisableFishingRodInwheel = *getGlobalPtr(BASE + 18);
 	int _eFishType = *getGlobalPtr(BASE + 37); // ???
 	int _fish_weight = *getGlobalPtr(BASE + 38); // ???
-	Hash eBaitSelectedInWheel = *getGlobalPtr(BASE + 153); // See enum _eBaitSelectedInWheel
+	//Hash eBaitSelectedInWheel = *getGlobalPtr(BASE + 153); // Incorrect? enum _eBaitSelectedInWheel
 	int iFishCaughtThisGameBoot = *getGlobalPtr(BASE + 220 + 1); // Global_1900073.f_220[0]
 	int iFishCaughtThisSession = *getGlobalPtr(BASE + 215 + 1); // Global_1900073.f_215[0]
 private:

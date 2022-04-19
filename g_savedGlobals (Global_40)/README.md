@@ -36,7 +36,7 @@ float GetUNKDrunknessGlobal() { return reinterpret_cast<float&>(*getGlobalPtr(40
 int GetHonorGlobal() { return *getGlobalPtr(40 + 11095 + 35); }
 float GetPlayerCleanliness() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 28)); } // -100.0f if fully clean
 int GetTotalNumberOfItemsConsumed() { return *getGlobalPtr(40 + 11095 + 66); } // Total number of things ate/drank
-Hash GetPlayerModel() { return *getGlobalPtr(40 + 39); }
+Hash GetPlayerModel() { return *getGlobalPtr(40 + 39); } // Returns PLAYER_ZERO if Arthur, or PLAYER_THREE if John
 ```
 #
 ```

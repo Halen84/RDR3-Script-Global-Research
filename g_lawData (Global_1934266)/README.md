@@ -33,7 +33,7 @@ enum _eCurrentUIState
 ```
 
 # Snippets from the scripts (b1436)
-- TODO
+- short_update.ysc
 - Line 6079 - func_180
 ```
 else if (bParam0)

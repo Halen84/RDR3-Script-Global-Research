@@ -11,7 +11,7 @@ private:
 ```
 
 # Snippets from the scripts (b1436)
-- TODO
+- short_update.ysc
 - Line 7124
 ```
 void func_205(bool bParam0)
