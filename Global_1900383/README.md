@@ -1,5 +1,6 @@
 <h2>Global_1900383</h2>
 - The only thing I've researched on this global is that I can disable horse whistling every frame.
+
 ```
 *getGlobalPtr(1900383 + 316) = 2; // Disables horse whistling every frame
 ```
