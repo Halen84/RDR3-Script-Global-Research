@@ -32,12 +32,38 @@ float GetDeadeyeOverpowerTime() { return reinterpret_cast<float&>(*getGlobalPtr(
 float GetStaminaDrainRate() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 62)); } // Player --> Arthur --> General --> Weight
 float GetDamageTakenRate() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 45)); } // Player --> Arthur --> General --> Weight
 float GetWeightCoreDrainRate() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 25)); }
-float GetUNKDrunknessGlobal() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 22)); }
+float GetUNKDrunknessGlobal() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 22)); } // Not exactly sure what this returns, but it's related to drunk/soberness
 int GetHonorGlobal() { return *getGlobalPtr(40 + 11095 + 35); }
 float GetPlayerCleanliness() { return reinterpret_cast<float&>(*getGlobalPtr(40 + 11095 + 28)); } // -100.0f if fully clean
 int GetTotalNumberOfItemsConsumed() { return *getGlobalPtr(40 + 11095 + 66); } // Total number of things ate/drank
 Hash GetPlayerModel() { return *getGlobalPtr(40 + 39); } // Returns PLAYER_ZERO if Arthur, or PLAYER_THREE if John
 ```
+
+# Horse Stats
+- g_savedGlobals also holds horse stats. Again, not all are known.
+```
+// These 3 funcs don't actually change horse, only its stats in the pause menu
+void SetHorseModelStat(Hash model)
+{
+	//Global_40.f_1095.f_1[iParam0 /*436*/].f_9
+	*getGlobalPtr(40 + 1095 + 1 + 1 + PH_SLOT_PRIMARY + 9) = model;
+}
+
+void SetHorseBreedStat(Hash breed)
+{
+	//Global_40.f_1095.f_1[iParam0 /*436*/].f_8
+	*getGlobalPtr(40 + 1095 + 1 + 1 + PH_SLOT_PRIMARY + 8) = breed;
+}
+
+void SetHorseGenderStat(int gender)
+{
+	if (gender < 0 || gender > 2) { gender = 2; }
+	// 0 = Unknown, 1 = Male, 2 = Female
+	//Global_40.f_1095.f_1[iParam0 /*436*/].f_10
+	*getGlobalPtr(40 + 1095 + 1 + 1 + PH_SLOT_PRIMARY + 10) = gender;
+}
+```
+
 #
 ```
 enum _ePlayerHorseSlot // eSlot
