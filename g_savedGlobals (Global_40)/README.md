@@ -64,7 +64,8 @@ void SetHorseGenderStat(int gender)
 }
 ```
 
-#
+
+# Enums
 ```
 enum _ePlayerHorseSlot // eSlot
 {

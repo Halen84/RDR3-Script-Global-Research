@@ -3,11 +3,17 @@
 ```
 struct g_lawData
 {
-	struct wantedUIData // BASE + 78
+	Hash _currentLawRegion = *getGlobalPtr(BASE + 26);
+	float _lawSeeingRange = *getGlobalPtr(BASE + 69); // To be used with native LAW::_SET_LAW_SEEING_RANGE
+	Hash _mostRecentPursuitBountyState = *getGlobalPtr(BASE + 5);
+	Hash _currentCrime = *getGlobalPtr(BASE + 6);
+
+	struct wantedUIData
 	{
 		int eCurrentUIState = *getGlobalPtr(BASE + 78 + 59);
 	};
-	// Global_1934266.f_78.f_62 = g_lawData.wantedUIData.??? (is a SET value for eCurrentUIState?)
+	// Global_1934266.f_78.f_62 = g_lawData.wantedUIData.??? (is a SET value for eCurrentUIState)
+	// Global_1934266.f_78.f_60 = g_lawData.wantedUIDate.??? (sub state)
 private:
 	static const int BASE = 1934266;
 };

@@ -3,6 +3,7 @@
 ```
 struct g_worldStates
 {
+	BOOL bIgnoreInteriorEntitySetConditions = *getGlobalPtr(BASE + 271);
 	BOOL bForceWorldStateUpdate = *getGlobalPtr(BASE + 272);
 	int iCurPopBudget = *getGlobalPtr(BASE + 286);
 private:
