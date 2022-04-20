@@ -80,7 +80,7 @@ int GetTotalNumberOfItemsConsumed()
 }
 Hash GetPlayerModel()
 {
-	return *getGlobalPtr(40 + 39); // Returns PLAYER_ZERO if Arthur, or PLAYER_THREE if John
+	return *getGlobalPtr(40 + 39);
 }
 ```
 

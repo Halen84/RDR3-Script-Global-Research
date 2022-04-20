@@ -9,7 +9,6 @@ struct g_HudDataUnsaved
 	BOOL _bShowingHorseWheel = *getGlobalPtr(BASE + 12); // Guessed name
 	BOOL _bShowingFishingWheel = *getGlobalPtr(BASE + 13); // Guessed name
 	BOOL bIsHUDActive = *getGlobalPtr(BASE + 19);
-
 	int iHudCurrentPage = *getGlobalPtr(BASE + 5);
 	int eHighlightedItem = *getGlobalPtr(BASE + 30);
 private:

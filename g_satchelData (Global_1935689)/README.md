@@ -3,10 +3,22 @@
 ```
 struct g_satchelData
 {
+	BOOL _bVisible = *getGlobalPtr(BASE + 1);
 	BOOL bEnabled = *getGlobalPtr(BASE + 2);
 	BOOL bDisabledThisFrame = *getGlobalPtr(BASE + 6);
-	BOOL _bListItemFocused = *getGlobalPtr(BASE + 7);
+	BOOL bListItemFocused = *getGlobalPtr(BASE + 7);
+	BOOL bReopenFromInspect = *getGlobalPtr(BASE + 9);
+	int eCurrItem = *getGlobalPtr(BASE + 10190);
+	int iCurrFolder = *getGlobalPtr(BASE + 10188);
+	int _eCurrCategory = *getGlobalPtr(BASE + 10189);
 	int dse_CategoryIndex = *getGlobalPtr(BASE + 10203);
+	int iNumListItems = *getGlobalPtr(BASE + 10194);
+
+	struct sFolderData // BASE + 19
+	{
+		int iNumItemsInCategory = *getGlobalPtr(BASE + 19 + 203);
+	};
+
 private:
 	static const int BASE = 1935689;
 };

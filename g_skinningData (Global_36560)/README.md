@@ -3,11 +3,29 @@
 ```
 struct g_skinningData
 {
-	int state = *getGlobalPtr(BASE);
+	int state = *getGlobalPtr(BASE); // enum _eSkinningState
+	Entity _entity = *getGlobalPtr(BASE + 1);
+	int _entityRarityLevel = *getGlobalPtr(BASE + 2);
+	int _skinningFlag = *getGlobalPtr(BASE + 3);
 	int eHeldInventoryItem = *getGlobalPtr(BASE + 15);
 private:
 	static const int BASE = 36560;
 };
+```
+
+#
+```
+enum _eSkinningState
+{
+	SKINNING_STATE_WAIT,
+	SKINNING_STATE_CHECK_VALID_TARGET,
+	SKINNING_STATE_INIT,
+	SKINNING_STATE_UPDATE,
+	SKINNING_STATE_CALCULATE_RESULTS,
+	SKINNING_STATE_GIVE_PLAYER_RESULTS,
+	SKINNING_STATE_CLEANUP,
+	SKINNING_STATE_INVALID,
+}
 ```
 
 # Snippets from the scripts (b1436)

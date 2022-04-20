@@ -10,6 +10,7 @@ g_iLastUIDCompletedTime | *getGlobalPtr(1898438) | int
 g_iCurrentPlayingCutscene | *getGlobalPtr(43800) | AnimScene
 g_eHerbMode | *getGlobalPtr(36580) | int
 g_bWipeMPSaveData | *getGlobalPtr(30) | BOOL
+g_bMissionControllerActive | *getGlobalPtr(1048577) | BOOL
 
 
 # Other Globals
