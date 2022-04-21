@@ -4,8 +4,8 @@
 struct g_skinningData
 {
 	int state = *getGlobalPtr(BASE); // enum _eSkinningState
-	Entity _entity = *getGlobalPtr(BASE + 1);
-	int _entityRarityLevel = *getGlobalPtr(BASE + 2);
+	Entity _skinningEntity = *getGlobalPtr(BASE + 1); // Returns current entity you are skinning
+	int _skinningEntityRarityLevel = *getGlobalPtr(BASE + 2); // Returns enum eAnimalRarityLevel (i only ever got 3)
 	int _skinningFlag = *getGlobalPtr(BASE + 3);
 	int eHeldInventoryItem = *getGlobalPtr(BASE + 15);
 private:

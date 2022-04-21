@@ -4,9 +4,11 @@
 struct g_playerData
 {
 	BOOL bPlayerDead = *getGlobalPtr(BASE + 12);
-	BOOL _inRespawnSequence = *getGlobalPtr(BASE + 4); // Guessed name - True until player moves after respawning
-	Hash _currentWeapon = *getGlobalPtr(BASE + 44); // Guessed name
-	Hash _lastWeaponFired = *getGlobalPtr(BASE + 46); // Guessed name
+	BOOL _inRespawnSequence = *getGlobalPtr(BASE + 4); // True until player moves after respawning
+	BOOL _inCombat = *getGlobalPtr(BASE + 24);
+	Ped _currentMountedHorse = *getGlobalPtr(BASE + 40);
+	Hash _currentWeapon = *getGlobalPtr(BASE + 44);
+	Hash _lastWeaponFired = *getGlobalPtr(BASE + 46);
 
 	// Taken from the scripts - not actually in g_playerData
 	// See enum _ePlayerFlags

@@ -4,6 +4,7 @@
 struct g_DrinkData
 {
 	float fDrinkPotencyMeter = *getGlobalPtr(BASE + 9);
+	BOOL _forcePassOut = *getGlobalPtr(BASE + 18 + 1);
 
 	struct sFXData // BASE + 12
 	{
