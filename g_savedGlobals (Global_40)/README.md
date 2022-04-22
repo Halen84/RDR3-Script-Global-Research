@@ -5,6 +5,7 @@ struct g_savedGlobals
 {
 	BOOL bGameInitialized = *getGlobalPtr(BASE); // Global_40 + 0 or 1
 	Hash eCurrentBaitEquipped = *getGlobalPtr(BASE + 11184 + 1); // Global_40.f_11184[0]
+	int _localWorldStateBitfields = *getGlobalPtr(BASE + 283 + 1); // See Examples.md for more info -- Global_40.f_283[iVar1]
 
 	// int PLAYER_SADDLE_SET_HORSE_SLOT = *getGlobalPtr(BASE + 1095 + 3054); // enum _ePlayerHorseSlot
 	// int PLAYER_SADDLE_SET_STATE = *getGlobalPtr(BASE + 1095 + 3054 + 1); // enum _ePlayerHorseSaddleState
@@ -19,6 +20,8 @@ private:
 # Horse Stats
 - g_savedGlobals also contain some horse stats. The only known globals are ones that only affect pause menu stats. [Some examples](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
 
+# Local World State Bitfields
+- g_savedGlobals can also set local world state bitfields. [Example](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
 
 # Enums
 ```
