@@ -13,7 +13,7 @@ struct Global_1900383
 		int _eHorseWhistleState = *getGlobalPtr(BASE + 378); // enum _eHorseWhistleState
 		int eWhistleType = *getGlobalPtr(BASE + 378 + 9); // enum eWhistleType
 		Hash eAudPedWhistleType = *getGlobalPtr(BASE + 378 + 10); // enum _eAudPedWhistleType
-		Hash _iLastWhistleTime = *getGlobalPtr(BASE + 378 + 11);
+		int _iLastWhistleTime = *getGlobalPtr(BASE + 378 + 11);
 	};
 
 private:
@@ -23,6 +23,30 @@ private:
 #
 ```
 *getGlobalPtr(1900383 + 316) = 2; // Disables horse whistling every frame
+```
+
+# Enums
+```
+enum _eHorseWhistleState
+{
+	HWS_INVALID = -1,
+	HWS_INIT,
+	HWS_RESET_WHISTLE,
+	HWS_WAITING_FOR_WHISTLE,
+	HWS_WHISTLE_DETECTED,
+	HWS_CHECK_FAIL_CASES,
+	HWS_HANDLE_RESPONSE
+};
+
+enum _eAudPedWhistleType : Hash
+{
+	WHISTLEHORSERESPONSIVE = 4222757766,
+	WHISTLEHORSETALK = 640210656,
+	WHISTLEHORSELONG = 869278708,
+	WHISTLEHORSEDOUBLE = 1051485804,
+	WHISTLEHORSESHORT = 1704957293,
+	WHISTLEANIMALNOISES = 1807639261
+};
 ```
 
 # Snippets from the scripts (b1436)
