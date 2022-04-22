@@ -5,6 +5,7 @@ struct g_playerMenuData
 {
 	BOOL bVisible = *getGlobalPtr(BASE);
 	BOOL bEnabled = *getGlobalPtr(BASE + 1);
+	BOOL _bClosed = *getGlobalPtr(BASE + 3);
 private:
 	static const int BASE = 1898068;
 };

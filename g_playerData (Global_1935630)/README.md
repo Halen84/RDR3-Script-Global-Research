@@ -9,23 +9,6 @@ struct g_playerData
 	Ped _currentMountedHorse = *getGlobalPtr(BASE + 40);
 	Hash _currentWeapon = *getGlobalPtr(BASE + 44);
 	Hash _lastWeaponFired = *getGlobalPtr(BASE + 46);
-
-	// Taken from the scripts - not actually in g_playerData
-	// See enum _ePlayerFlags
-	void setPlayerFlag(int flag)
-	{
-		flag /= 2; // Not in scripts, modified by me. TODO: Fix this in the enums instead
-		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) | flag);
-	}
-
-	// Taken from the scripts - not actually in g_playerData
-	// See enum _ePlayerFlags
-	void clearPlayerFlag(int flag)
-	{
-		flag /= 2; // Not in scripts, modified by me. TODO: Fix this in the enums instead
-		*getGlobalPtr(BASE) = (*getGlobalPtr(BASE) - (*getGlobalPtr(BASE) & flag));
-	}
-
 private:
 	static const int BASE = 1935630;
 };
