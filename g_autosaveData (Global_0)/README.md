@@ -5,7 +5,7 @@ struct g_autosaveData
 {
 	Hash _savegameType = *getGlobalPtr(BASE); // enum eSavegameType -- According to the scripts, this makes a "request" of some sort -- TODO: Test this
 	int _saveFlag = *getGlobalPtr(BASE + 2);
-	Vector3 _savegameCoords = (Vector3)*getGlobalPtr(BASE + 3); // In the scripts, this pointer just gets set to the players current position
+	Vector3 _savegameCoords = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 3)); // In the scripts, this pointer just gets set to the players current position
 private:
 	static const int BASE = 0;
 };

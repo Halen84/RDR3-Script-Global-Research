@@ -4,7 +4,7 @@
 struct g_herbUnsaved
 {
 	// g_herbUnsaved[", Global_1913677, "].vLastFakePicked = Global_1913500[Global_1913677 /*4*/].f_1
-	Vector3 vLastFakePicked = (Vector3)*getGlobalPtr(BASE + 1 + 1913677 + 1);
+	Vector3 vLastFakePicked = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 1 + 1913677 + 1));
 private:
 	static const int BASE = 1913500; // or 1913677?
 };
