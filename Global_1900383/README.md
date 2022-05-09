@@ -7,6 +7,7 @@ struct Global_1900383
 	Ped _currentSaddleHorse = *getGlobalPtr(BASE + 1);
 	Vector3 _lastHitchCoords = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 1 + PH_SLOT_PRIMARY + 28)); // Global_1900383[iParam0 /*45*/].f_28
 	int eBodyWeightOutfit = *getGlobalPtr(BASE + 1 + PH_SLOT_PRIMARY + 1); // Could be a hash? -- Global_1900383[iParam0 /*45*/].f_1
+	Object _saddleObject = *getGlobalPtr(BASE + 393);
 
 	struct _whistleData // Guessed name - BASE + 378
 	{

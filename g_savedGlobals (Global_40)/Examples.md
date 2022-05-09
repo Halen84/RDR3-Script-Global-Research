@@ -109,6 +109,8 @@ void SetHorseGenderStat(int gender)
 	//Global_40.f_1095.f_1[iParam0 /*436*/].f_10
 	*getGlobalPtr(40 + 1095 + 1 + 1 + PH_SLOT_PRIMARY + 10) = gender;
 }
+
+// Horse name address: *getGlobalPtr(40 + 1095 + 1 + 1 + PH_SLOT_PRIMARY) 
 ```
 
 # Local World States
