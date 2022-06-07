@@ -3,15 +3,19 @@
 ```
 struct g_lawData
 {
+	int _currentState = *getGlobalPtr(BASE + 4); // eLBS
 	Hash _currentLawRegion = *getGlobalPtr(BASE + 26);
 	float _lawSeeingRange = *getGlobalPtr(BASE + 69); // To be used with native LAW::_SET_LAW_SEEING_RANGE
 	Hash _mostRecentPursuitBountyState = *getGlobalPtr(BASE + 5);
 	Hash _currentCrime = *getGlobalPtr(BASE + 6);
+	int _currentBounty = *getGlobalPtr(BASE + 1381); // Seems to be inaccurate sometimes
+	int _currentRegion = *getGlobalPtr(BASE + 900);
 
 	struct wantedUIData
 	{
 		int eCurrentUIState = *getGlobalPtr(BASE + 78 + 59);
-	};
+	}wantedUIData;
+	
 	// Global_1934266.f_78.f_62 = g_lawData.wantedUIData.??? (is a SET value for eCurrentUIState)
 	// Global_1934266.f_78.f_60 = g_lawData.wantedUIDate.??? (sub state)
 private:

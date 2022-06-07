@@ -9,7 +9,7 @@ struct g_DrinkData
 	struct sFXData // BASE + 12
 	{
 		float fCurrentDrunkenness = *getGlobalPtr(BASE + 12 + 1);
-	};
+	}sFXData;
 private:
 	static const int BASE = 1935436;
 };

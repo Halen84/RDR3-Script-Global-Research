@@ -3,12 +3,14 @@
 ```
 struct g_shopsData
 {
-	struct sActiveShop
+	Hash _currentSelectedItem = *getGlobalPtr(BASE + 16867); // This is most likely in g_shopsData.sActiveShop (1914319 + 16855 + 12)
+
+	struct sActiveShop // BASE + 16855
 	{
+		int eShopType = *getGlobalPtr(BASE + 16855);
 		int eShop = *getGlobalPtr(BASE + 16855 + 1);
-	};
-	// Global_1914319.f_16855.f_1 = g_shopsData.sActiveShop.eShop???
-	// Global_1914319.f_16855 = g_shopsData.sActiveShop.eShopType???
+	}sActiveShop;
+	
 private:
 	static const int BASE = 1914319;
 };

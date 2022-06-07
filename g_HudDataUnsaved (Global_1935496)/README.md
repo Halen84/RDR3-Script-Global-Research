@@ -4,13 +4,22 @@
 struct g_HudDataUnsaved
 {
 	BOOL bShowingInfoCard = *getGlobalPtr(BASE + 23);
-	BOOL _bShowingWeaponWheel = *getGlobalPtr(BASE + 10); // Guessed name
-	BOOL _bShowingItemWheel = *getGlobalPtr(BASE + 11); // Guessed name
-	BOOL _bShowingHorseWheel = *getGlobalPtr(BASE + 12); // Guessed name
-	BOOL _bShowingFishingWheel = *getGlobalPtr(BASE + 13); // Guessed name
+	BOOL _bShowingWeaponWheel = *getGlobalPtr(BASE + 10);
+	BOOL _bShowingItemWheel = *getGlobalPtr(BASE + 11);
+	BOOL _bShowingHorseWheel = *getGlobalPtr(BASE + 12);
+	BOOL _bShowingFishingWheel = *getGlobalPtr(BASE + 13);
 	BOOL bIsHUDActive = *getGlobalPtr(BASE + 19);
 	int iHudCurrentPage = *getGlobalPtr(BASE + 5);
-	int eHighlightedItem = *getGlobalPtr(BASE + 30);
+	int eHighlightedItem = *getGlobalPtr(BASE + 30); // Incorrect?
+	int _lastConsumableItemUsed = *getGlobalPtr(BASE + 31);
+	int _lastNonConsumableItemUsed = *getGlobalPtr(BASE + 32);
+	Hash _currentSelectedItem = *getGlobalPtr(BASE + 9633);
+	
+	struct dataUsability // BASE + 70
+	{
+		
+	}dataUsability;
+	
 private:
 	static const int BASE = 1935496;
 };

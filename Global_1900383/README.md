@@ -15,7 +15,7 @@ struct Global_1900383
 		int eWhistleType = *getGlobalPtr(BASE + 378 + 9); // enum eWhistleType
 		Hash eAudPedWhistleType = *getGlobalPtr(BASE + 378 + 10); // enum _eAudPedWhistleType
 		int _iLastWhistleTime = *getGlobalPtr(BASE + 378 + 11);
-	};
+	}_whistleData;
 
 private:
 	static const int BASE = 1900383;

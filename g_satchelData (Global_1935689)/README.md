@@ -8,16 +8,19 @@ struct g_satchelData
 	BOOL bDisabledThisFrame = *getGlobalPtr(BASE + 6);
 	BOOL bListItemFocused = *getGlobalPtr(BASE + 7);
 	BOOL bReopenFromInspect = *getGlobalPtr(BASE + 9);
-	int eCurrItem = *getGlobalPtr(BASE + 10190);
+	int eCurrItem = *getGlobalPtr(BASE + 10190); // Incorrect?
 	int iCurrFolder = *getGlobalPtr(BASE + 10188);
-	int _eCurrCategory = *getGlobalPtr(BASE + 10189);
+	Hash _eCurrCategory = *getGlobalPtr(BASE + 10189); // Incorrect?
 	int dse_CategoryIndex = *getGlobalPtr(BASE + 10203);
 	int iNumListItems = *getGlobalPtr(BASE + 10194);
+	int _currentSelectionIndex = *getGlobalPtr(BASE + 14);
+	int _numItemInCurrentPage = *getGlobalPtr(BASE + 20);
+	int _numItemInCurrentPage2 = *getGlobalPtr(BASE + 222);
 
 	struct sFolderData // BASE + 19
 	{
 		int iNumItemsInCategory = *getGlobalPtr(BASE + 19 + 203);
-	};
+	}sFolderData;
 
 private:
 	static const int BASE = 1935689;

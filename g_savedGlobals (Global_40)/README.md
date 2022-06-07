@@ -3,7 +3,7 @@
 ```
 struct g_savedGlobals
 {
-	BOOL bGameInitialized = *getGlobalPtr(BASE); // Global_40 + 0 or 1
+	BOOL bGameInitialized = *getGlobalPtr(BASE); // Global_40 + 0
 	Hash eCurrentBaitEquipped = *getGlobalPtr(BASE + 11184 + 1); // Global_40.f_11184[0]
 	int _localWorldStateBitfields = *getGlobalPtr(BASE + 283 + 1); // See Examples.md for more info -- Global_40.f_283[iVar1]
 
