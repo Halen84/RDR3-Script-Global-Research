@@ -11,8 +11,8 @@ struct g_HudDataUnsaved
 	BOOL bIsHUDActive = *getGlobalPtr(BASE + 19);
 	int iHudCurrentPage = *getGlobalPtr(BASE + 5);
 	int eHighlightedItem = *getGlobalPtr(BASE + 30); // Incorrect?
-	int _lastConsumableItemUsed = *getGlobalPtr(BASE + 31);
-	int _lastNonConsumableItemUsed = *getGlobalPtr(BASE + 32);
+	Hash _lastConsumableItemUsed = *getGlobalPtr(BASE + 31);
+	Hash _lastNonConsumableItemUsed = *getGlobalPtr(BASE + 32);
 	Hash _currentSelectedItem = *getGlobalPtr(BASE + 9633);
 	int _currentPageNumber = *getGlobalPtr(BASE + 9610);
 	Hash _lastItemUsed = *getGlobalPtr(BASE + 9634);
