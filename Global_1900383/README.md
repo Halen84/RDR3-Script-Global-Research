@@ -11,10 +11,10 @@ struct Global_1900383
 
 	struct _whistleData // Guessed name - BASE + 378
 	{
-		int _eHorseWhistleState = *getGlobalPtr(BASE + 378); // enum _eHorseWhistleState
+		int eHorseWhistleState = *getGlobalPtr(BASE + 378); // enum eHorseWhistleState
 		int eWhistleType = *getGlobalPtr(BASE + 378 + 9); // enum eWhistleType
-		Hash eAudPedWhistleType = *getGlobalPtr(BASE + 378 + 10); // enum _eAudPedWhistleType
-		int _iLastWhistleTime = *getGlobalPtr(BASE + 378 + 11);
+		Hash eAudPedWhistleType = *getGlobalPtr(BASE + 378 + 10); // enum eAudPedWhistleType
+		int iLastWhistleTime = *getGlobalPtr(BASE + 378 + 11);
 	}_whistleData;
 
 private:
@@ -28,7 +28,7 @@ private:
 
 # Enums
 ```
-enum _eHorseWhistleState
+enum eHorseWhistleState
 {
 	HWS_INVALID = -1,
 	HWS_INIT,
@@ -39,7 +39,7 @@ enum _eHorseWhistleState
 	HWS_HANDLE_RESPONSE
 };
 
-enum _eAudPedWhistleType : Hash
+enum eAudPedWhistleType : Hash
 {
 	WHISTLEHORSERESPONSIVE = 4222757766,
 	WHISTLEHORSETALK = 640210656,

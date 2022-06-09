@@ -16,6 +16,7 @@ struct g_satchelData
 	int _currentSelectionIndex = *getGlobalPtr(BASE + 14);
 	int _numItemInCurrentPage = *getGlobalPtr(BASE + 20);
 	int _numItemInCurrentPage2 = *getGlobalPtr(BASE + 222);
+	Hash _currentSelectedItem = *getGlobalPtr(BASE + 9440);
 
 	struct sFolderData // BASE + 19
 	{

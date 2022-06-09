@@ -14,6 +14,8 @@ struct g_HudDataUnsaved
 	int _lastConsumableItemUsed = *getGlobalPtr(BASE + 31);
 	int _lastNonConsumableItemUsed = *getGlobalPtr(BASE + 32);
 	Hash _currentSelectedItem = *getGlobalPtr(BASE + 9633);
+	int _currentPageNumber = *getGlobalPtr(BASE + 9610);
+	Hash _lastItemUsed = *getGlobalPtr(BASE + 9634);
 	
 	struct dataUsability // BASE + 70
 	{

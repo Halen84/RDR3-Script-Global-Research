@@ -18,8 +18,9 @@ Global|Description
 -------| -----------------
 int Global_20 | Save game event?
 int Global_21 | Some autosave flag?
-Vector3 _vPlayer (Global_36) | Current Player Coordinates - (34 in older versions)
-int _playerHonor (Global_11170) | Current Player Honor (Same as g_savedGlobals + 11095 + 35)
+Vector3 _g_vPlayer (Global_36) | Current Player Coordinates - (34 in older versions)
+int _g_playerHonor (Global_11170) | Current Player Honor (Same as g_savedGlobals + 11095 + 35)
+Hash Global_20891 | Last item bought in shops
 
 #
 ```
