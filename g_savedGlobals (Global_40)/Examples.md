@@ -1,8 +1,9 @@
 # Examples for g_savedGlobals
 
 # Player Stats
-- g_savedGlobals also holds lots of player stats. Not all are known, but here's quite a bit
-- They are stored in (g_savedGlobals + 11095)
+- g_savedGlobals also holds lots of player stats. Not all are known, but here's quite a bit. See README.md for most members
+- Some of these may be wrong
+- They are stored in (g_savedGlobals.playerRPGData)
 ```
 // Health Stats
 float GetHealthCoreAmount()

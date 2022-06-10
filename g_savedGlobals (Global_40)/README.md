@@ -46,7 +46,7 @@ struct g_savedGlobals
 		Vector3 vResetPosition =  reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 9 + 7));
 		int iResetRespawnNode = *getGlobalPtr(BASE + 9 + 10);
 		int iResetAnimIndex = *getGlobalPtr(BASE + 9 + 11);
-		int bForceAltAnim = *getGlobalPtr(BASE + 9 + 11);
+		BOOL bForceAltAnim = *getGlobalPtr(BASE + 9 + 11);
 		int fResetHeading = *getGlobalPtr(BASE + 9 + 11);
 		int eSavedTOD = *getGlobalPtr(BASE + 9 + 11);
 		int respawnRegion = *getGlobalPtr(BASE + 9 + 11);
@@ -625,10 +625,10 @@ struct g_savedGlobals
 			int vInvitePos;
 			int vActivityPos;
 			BOOL bEnabledInFlow;
-			int bHasBeenLaunched;
-			int bMustOffer;
-			int bOfferUntilHasRun;
-			int bForceLaunch;
+			BOOL bHasBeenLaunched;
+			BOOL bMustOffer;
+			BOOL bOfferUntilHasRun;
+			BOOL bForceLaunch;
 			int eActivityDeed;
 			int eTODAvailable;
 			int iWeight;
@@ -1223,7 +1223,7 @@ private:
 - g_savedGlobals contains lots of information about player stats. [Some examples](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
 
 # Horse Stats
-- g_savedGlobals also contain some horse stats. The only known globals are ones that only affect pause menu stats. [Some examples](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
+- g_savedGlobals also contain some horse stats. [Some examples](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
 
 # Local World State Bitfields
 - g_savedGlobals can also set local world state bitfields. [Example](https://github.com/Halen84/RDR3-Script-Global-Research/blob/master/g_savedGlobals%20(Global_40)/Examples.md)
