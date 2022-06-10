@@ -3,12 +3,46 @@
 ```
 struct g_savedGlobals
 {
-	BOOL bGameInitialized = *getGlobalPtr(BASE); // Global_40 + 0
+	BOOL bGameInitialized = *getGlobalPtr(BASE);
+	BOOL bInGameflow = *getGlobalPtr(BASE + 1);
+	Vector3 vLastCampPosition = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 2));
+	float fLastCampHeading = *getGlobalPtr(BASE + 5);
+	Vector3 vCurrentCaravanBedPosition = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 6));
+	int sFlow = *getGlobalPtr(BASE + 40);
+	int minigameUnlocked = *getGlobalPtr(BASE + 7854);
+	int jobUnlocked = *getGlobalPtr(BASE + 7855);
+	int procmissionUnlocked = *getGlobalPtr(BASE + 7856);
+	int wornOutfit = *getGlobalPtr(BASE + 7729);
+	Hash playerCharacterModel = *getGlobalPtr(BASE + 39);
+	int lawBountyAchievement = *getGlobalPtr(BASE + 449);
+	int eRCMIndexTracked = *getGlobalPtr(BASE + 1093);
+	int iRCMsActive = *getGlobalPtr(BASE + 1094);
+	int deadeyeLevel = *getGlobalPtr(BASE + 7755);
+	BOOL bAttackedBurial = *getGlobalPtr(BASE + 11953);
+	int iMickeyMemory = *getGlobalPtr(BASE + 11954);
+	int iStudiedAnimalsNoBinoculars = *getGlobalPtr(BASE + 11955);
+	int iLastPayoffTutorialMessage = *getGlobalPtr(BASE + 11956);
+	int iSavedBounty = *getGlobalPtr(BASE + 11957);
+	BOOL bHatKnockedOff = *getGlobalPtr(BASE + 7730);
+	int iHerbArrLocation = *getGlobalPtr(BASE + 9273);
+	int iSPMinigameAchievementTracker = *getGlobalPtr(BASE + 11958);
+	int iSPChecksum = *getGlobalPtr(BASE + 11999);
+	BOOL bEndlessSummerInitialized = *getGlobalPtr(BASE + 7860);
+	int iMoneyBeforeGuarma = *getGlobalPtr(BASE + 7861);
+	int _specialWildHorse = *getGlobalPtr(BASE + 11945);
+	BOOL bPhotoModeToastDelivered = *getGlobalPtr(BASE + 12017);
+	BOOL bFlacoCabinCigBoxLooted = *getGlobalPtr(BASE + 12018);
+	Ped playerHorse = *getGlobalPtr(BASE + 1095);
+	int eTutorialsRun = *getGlobalPtr(BASE + 7832);
+	int mapBlipData = *getGlobalPtr(BASE + 7862);
+	int herbs = *getGlobalPtr(BASE + 9274);
+	BOOL bUsedFirstPerson = *getGlobalPtr(BASE + 9421);
 	Hash eCurrentBaitEquipped = *getGlobalPtr(BASE + 11184 + 1); // Global_40.f_11184[0]
-	int _localWorldStateBitfields = *getGlobalPtr(BASE + 283 + 1); // See Examples.md for more info -- Global_40.f_283[iVar1]
 
-	// int PLAYER_SADDLE_SET_HORSE_SLOT = *getGlobalPtr(BASE + 1095 + 3054); // enum _ePlayerHorseSlot
-	// int PLAYER_SADDLE_SET_STATE = *getGlobalPtr(BASE + 1095 + 3054 + 1); // enum _ePlayerHorseSaddleState
+
+	int _localWorldStateBitfields = *getGlobalPtr(BASE + 283 + 1); // See Examples.md for more info -- Global_40.f_283[iVar1]
+	int _PLAYER_SADDLE_SET_HORSE_SLOT = *getGlobalPtr(BASE + 1095 + 3054);
+	int _PLAYER_SADDLE_SET_STATE = *getGlobalPtr(BASE + 1095 + 3054 + 1);
 private:
 	static const int BASE = 40;
 };
