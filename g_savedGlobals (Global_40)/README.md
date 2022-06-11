@@ -1,5 +1,8 @@
 <h2>g_savedGlobals</h2>
 
+#Notice
+- Many struct sizes are WRONG and will be fixed at a later date
+
 ```
 struct g_savedGlobals
 {
