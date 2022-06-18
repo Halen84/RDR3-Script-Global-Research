@@ -5,6 +5,7 @@ struct g_playerData
 {
 	BOOL bPlayerDead = *getGlobalPtr(BASE + 12);
 	BOOL _inRespawnSequence = *getGlobalPtr(BASE + 4); // True until player moves after respawning
+	BOOL _isWanted = *getGlobalPtr(BASE + 23);
 	BOOL _inCombat = *getGlobalPtr(BASE + 24);
 	Ped _currentMountedHorse = *getGlobalPtr(BASE + 40);
 	Hash _currentWeapon = *getGlobalPtr(BASE + 44);

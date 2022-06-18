@@ -1,7 +1,8 @@
 <h2>g_savedGlobals</h2>
 
 #Notice
-- Many struct sizes are WRONG and will be fixed at a later date
+- If a specific size is noted, then you must multiply the member index by that size when trying to access the global
+- Many struct sizes may be wrong
 
 ```
 struct g_savedGlobals
@@ -54,7 +55,6 @@ struct g_savedGlobals
 		int eSavedTOD = *getGlobalPtr(BASE + 9 + 11);
 		int respawnRegion = *getGlobalPtr(BASE + 9 + 11);
 		int iResetBounty = *getGlobalPtr(BASE + 9 + 11);
-		int iRespawnPosHistory = *getGlobalPtr(BASE + 9 + 11);
 
 		struct iRespawnPosHistory // BASE + 9 + 16
 		{
@@ -260,6 +260,8 @@ struct g_savedGlobals
 
 		struct trackedParcels // BASE + 9910 -- Does this exist?
 		{
+			// Note: Size is 6
+			
 			int eMailSendFlags = *getGlobalPtr(BASE + 9910); // +0
 			int eMailReplyFlags = *getGlobalPtr(BASE + 9910 + 1);
 			int eSentTime = *getGlobalPtr(BASE + 9910 + 2);
@@ -312,7 +314,7 @@ struct g_savedGlobals
 
 		struct activeCampStateTags // BASE + 4283 + 6
 		{
-			// NOTE: Size is 301. TODO: Fix these
+			// NOTE: Size is 5. TODO: Fix these
 
 			int eTag = *getGlobalPtr(BASE + 4283 + 6); // +0
 			int eExpiry = *getGlobalPtr(BASE + 4283 + 6 + 1);
@@ -335,7 +337,7 @@ struct g_savedGlobals
 
 		struct caravanPurchaseList // BASE + 4283 + 367
 		{
-			// NOTE: Size is 41. TODO: Fix these
+			// NOTE: Size is 4. TODO: Fix these
 
 			int eGlobalItemIdx = *getGlobalPtr(BASE + 4283 + 367); // +0
 			int iPurchaseTimer = *getGlobalPtr(BASE + 4283 + 367 + 1);
@@ -364,10 +366,12 @@ struct g_savedGlobals
 			int iUnlockHashCount = *getGlobalPtr(BASE + 4283 + 415 + 24);
 		}sSupplyGroups;
 
-
+		//TODO
 		struct sContData // BASE + 4283 + 440
 		{
-			// Note: Size is 127 -- TODO: Fix these
+			// Note: Size is 53
+			
+			// struct sPg ?
 
 			int iCarriedOverCents; // ???
 			int sCont; // ???
@@ -491,7 +495,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct lawDistrictData // BASE + 431
 	{
-		// TODO		 Note: Size is 18
+		// TODO		 Note: Size is 1
 
 		int eLawDistrictFlags;
 	}lawDistrictData;
@@ -501,7 +505,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct caravanEventData // BASE + 7100
 	{
-		// TODO		 Note: Size is 57
+		// TODO		 Note: Size is 8
 
 		int iTimesCompleted;
 		int iTimesSeen;
@@ -536,7 +540,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct playerOnlyGreetStack // BASE + 4237
 	{
-		// TODO		Note: Size is 46
+		// TODO		Note: Size is 3
 
 		int eRuleset;
 		int todExpiry;
@@ -548,7 +552,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct companionData // BASE + 4942
 	{
-		// TODO		Note: Size is 1621
+		// TODO		Note: Size is 60
 
 		int companionFlags;
 		int iTrustLevel;
@@ -576,6 +580,8 @@ struct g_savedGlobals
 
 		struct greetOverrides
 		{
+			// Note: Size is 3
+		
 			int eRuleset;
 			int todExpiry;
 			BOOL bTempDisable;
@@ -595,7 +601,7 @@ struct g_savedGlobals
 
 		struct itemRequests
 		{
-			// Note: size is 271
+			// Note: size is 27
 
 			int eRequest;
 			int eRequestItem;
@@ -618,7 +624,7 @@ struct g_savedGlobals
 
 		struct availableActivities // BASE + 6563 + 274
 		{
-			// Note: size is 201
+			// Note: size is 20
 
 			int eActivity;
 			int eActivityInstance;
@@ -645,7 +651,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct activities // BASE + 7039
 	{
-		// TODO		Note: Size is 61
+		// TODO		Note: Size is 2
 
 		BOOL bHasBeenPerformed;
 		BOOL bHasBeenOffered;
@@ -656,7 +662,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct outfits // BASE + 7157
 	{
-		// TODO		Note: size is 286
+		// TODO		Note: size is 3
 
 		int status;
 		int effect;
@@ -672,7 +678,7 @@ struct g_savedGlobals
 
 		struct facialHair // BASE + 7731 + 0 ?
 		{
-			// Note: Size is 16
+			// Note: Size is 5
 
 			int facialHairLength;
 			int facialHairCut;
@@ -701,7 +707,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct mapBlipData // BASE + 7862
 	{
-		// TODO		Note: Size is 1001
+		// TODO		Note: Size is 4
 
 		int blipRegion;
 		int blipType;
@@ -757,7 +763,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct eventArea // BASE + 9096
 	{
-		// TODO		Note: Size is 49
+		// TODO		Note: Size is 12
 
 		int iStage;
 		int iForceTransitionStage;
@@ -796,7 +802,7 @@ struct g_savedGlobals
 
 		struct sHuntingZoneTypes // BASE + 9319 + 0 ?
 		{
-			// Note: Size is 65
+			// Note: Size is 4
 
 			BOOL bDiscovered;
 			BOOL bCompleted;
@@ -811,7 +817,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct propertyData // BASE + 9384
 	{
-		// TODO		Note: Size is 35
+		// TODO		Note: Size is 2
 
 		int eFlags;
 		int eTimeOfDay;
@@ -822,7 +828,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct homeRobberyData // BASE + 9422
 	{
-		// Note: Size is 57
+		// Note: Size is 7
 
 		int todNextAvailable = *getGlobalPtr(BASE + 9422); // +0
 		int todLastVisited = *getGlobalPtr(BASE + 9422 + 1);
@@ -838,7 +844,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct newspapers // BASE + 9479
 	{
-		// TODO		Note: Size is 57
+		// TODO		Note: Size is 4
 
 		int eStatus;
 		int eDynamicStory1;
@@ -867,7 +873,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct gangs // BASE + 9571
 	{
-		// TODO		Note: Size is 61
+		// TODO		Note: Size is 10
 
 		int gangSavedFlags;
 		int gangStatus;
@@ -895,7 +901,7 @@ struct g_savedGlobals
 
 		struct ambushTrack // BASE + 9632 + 0 ?
 		{
-			// Note: Size is 177
+			// Note: Size is 4
 
 			int iCompletedCount;
 			int iSeenCount;
@@ -958,7 +964,7 @@ struct g_savedGlobals
 	{
 		struct sPrisoners // BASE + 9829 + 0 ?
 		{
-			// Note: Size is 81
+			// Note: Size is 4
 
 			int eJailRegion;
 			int ePrisoner;
@@ -971,7 +977,7 @@ struct g_savedGlobals
 
 	struct trainData // BASE + 11029
 	{
-		// Note: Size is 66
+		// Note: Size is 5
 
 		int trainFlags = *getGlobalPtr(BASE + 11029); // +0
 		Vector3 vTrainLoc = reinterpret_cast<Vector3&>(*getGlobalPtr(BASE + 11029 + 1));
@@ -983,6 +989,7 @@ struct g_savedGlobals
 	struct playerRPGData // BASE + 11095
 	{
 		float fPlayerEfficiency = *getGlobalPtr(BASE + 11095); // +0 -- TODO: THIS IS A STRUCT THAT CONTAINS fCorePoints
+		
 		int iHonor = *getGlobalPtr(BASE + 11095 + 35);
 		int iHighestHonorRank = *getGlobalPtr(BASE + 11095 + 36);
 		int iLowestHonorRank = *getGlobalPtr(BASE + 11095 + 37);
@@ -1022,7 +1029,7 @@ struct g_savedGlobals
 
 		struct sAttributeOverpoweredTime // BASE + 11095 + 4
 		{
-			// Note: Size is 7?
+			// Note: Size is 2
 
 			float fTankTime;
 			float fCoreTime;
@@ -1041,7 +1048,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct moralChoices // BASE + 11166
 	{
-		// TODO		Note: Size is 16
+		// TODO		Note: Size is 1
 
 		int eChoiceType;
 	}moralChoices;
@@ -1050,9 +1057,16 @@ struct g_savedGlobals
 
 	struct cacheOutfitData // BASE + 7443
 	{
-		// Note: Size is 286
+		// Note: Size is 286 (?)
 
-		int cachedOutfits;
+		struct cachedOutfits
+		{
+			// Note: Size is 3
+			
+			int status;
+			int effect;
+			int tags;
+		};
 	}cacheOutfitData;
 
 	//===========================================================//
@@ -1098,7 +1112,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct specialPeds // BASE + 11623
 	{
-		// TODO		Note: Size is 241
+		// TODO		Note: Size is 8
 
 		int ePedStage;
 		int eSavedFlags;
@@ -1123,7 +1137,7 @@ struct g_savedGlobals
 	// NOT DONE
 	struct hideouts // BASE + 11864
 	{
-		// TODO		Note: Size is 19
+		// TODO		Note: Size is 2
 
 		int eFlags;
 		int iNumActorsRemaining;
