@@ -7,7 +7,8 @@
 
 # Notes
 - Most of the time, to get the correct value of a global pointer, you will need to do ***reinterpret_cast<(datatype)&>*** on the pointer.
-- Member names starting with an underscore (_), are guessed names.
+- Names starting with an underscore ( _ ) are guessed names.
+- SOME EXAMPLE MAY BE INNACCURATE/WRONG AND I AM WORKING TO IMPROVE THEM
 
 # Committing your research
 - Make a pull request in a similar format that I have it as currently
